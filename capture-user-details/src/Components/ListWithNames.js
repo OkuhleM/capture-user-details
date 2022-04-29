@@ -1,8 +1,12 @@
-import React from 'react'
+import React from 'react';
+import UserDetails from './UserDetails';
 
 function ListWithNames() {
   return (
-    <div>ListWithName</div>
+    <div>ListWithName
+
+
+    </div>
   )
 }
 

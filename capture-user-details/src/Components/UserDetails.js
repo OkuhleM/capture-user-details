@@ -1,11 +1,11 @@
 import React from 'react';
-import { useState } from 'react'
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
 
 function UserDetails() {
 
 const [inputValue, setInputValue] = useState({"name":"","surname":"","date of birth":"","grade":""})
 const [usersList, setUsers] = useState([])
-console.log('inputValue', inputValue)
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -13,13 +13,11 @@ const handleSubmit = (e) => {
    
   
 }
-console.log("submit",usersList)
 
 
 
 const handleChange = (e) => {
     setInputValue({...inputValue,[e.target.name]: e.target.value})
-    // setFormInfo({ ...formInfo, [e.target.name]: e.target.value })
 
 }
 
@@ -34,25 +32,26 @@ const handleChange = (e) => {
             name='dateOfBirth' onChange={handleChange}/>
             <input type="number" placeholder="Grade" name='grade'
             value={inputValue.grade} onChange={handleChange} />
-            <button onClick={handleSubmit}>Submit</button>
+         <button onClick={handleSubmit}>Submit</button>
         </form>
 
-        <div>
+       <div>
                 <ul>{usersList.map((users, index) => {
                     return (
                         <div key={index} className="votersList">
-                            <p>{users.name}</p>
-                            <p>{users.surname}</p>
-                            <p>{users.dateOfBirth}</p>
-                            <p>{users.grade}</p>
+                            <p>{users.name}</p><br/>
+                            <p>{users.surname}</p><br/>
+                            <p>{users.dateOfBirth}</p><br/>
+                            <p>{users.grade}</p><br/>
 
-                            {/* <p><Delete onClick={()=>handleDelete()} /></p> */}
                             
                         </div>
 
                     )
                 })}</ul>
             </div>
+            <Link to='listwithnames'><button>See details</button> </Link>
+
     </div>
   )
 }
