@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
   },
   "keywords": [
     "capture",
@@ -16,10 +16,12 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.20.0",
+    "dotenv": "^16.0.0",
     "express": "^4.18.0",
     "mongodb": "^4.5.0",
     "mongoose": "^6.3.1",
     "node-modules": "^1.0.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.16",
+    "path": "^0.12.7"
   }
 }
